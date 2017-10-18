@@ -18,9 +18,29 @@ import PlaygroundSupport
 //: ## Add your code below
 
 // Create canvas
-let canvas = Canvas(width: 300, height: 300)
+let canvas = Canvas(width: 500, height: 500)
+//make the background black
+canvas.drawRectangle(centreX: 250, centreY: 250, width: 500, height: 500)
+canvas.fillColor = Color.black
+//no fill
+canvas.drawShapesWithFill = false
+//borderwidth
+canvas.defaultBorderWidth = 5
 
-// Below this line, try combining a loop and four statements that draw lines to generate the goal
+// Loop to set horizontal position
+for x in stride(from: 0, through: 500, by: 500){
+    //loop to set veritical position
+    for y in stride(from: 500, through: 0, by: -500){
+        //draw ellipses
+        for size in stride(from: 1000, through: 0, by: -100){
+            
+            //for color in stride(from: 0, through: 360, by: 36){
+            canvas.borderColor = Color(hue: size/2, saturation: 100, brightness: 100, alpha: 100)
+            canvas.drawEllipse(centreX: x, centreY: y, width: size, height: size)
+            //}
+        }
+    }
+}
 
 /*:
  ## Template code
