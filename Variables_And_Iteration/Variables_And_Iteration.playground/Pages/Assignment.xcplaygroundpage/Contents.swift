@@ -33,11 +33,8 @@ for x in stride(from: 0, through: 500, by: 500){
     for y in stride(from: 500, through: 0, by: -500){
         //draw ellipses
         for size in stride(from: 1000, through: 0, by: -100){
-            
-            //for color in stride(from: 0, through: 360, by: 36){
             canvas.borderColor = Color(hue: size/2, saturation: 100, brightness: 100, alpha: 100)
             canvas.drawEllipse(centreX: x, centreY: y, width: size, height: size)
-            //}
         }
     }
 }
